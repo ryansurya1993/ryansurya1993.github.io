@@ -52,29 +52,29 @@
   /* ---------- Mobile nav ---------- */
 
   function initMobileNav() {
-    var nav = document.getElementById("siteNav");
+    var sidebar = document.getElementById("sidebar");
     var toggle = document.getElementById("navToggle");
-    if (!nav || !toggle) return;
+    if (!sidebar || !toggle) return;
 
     function closeNav() {
-      nav.classList.remove("open");
+      sidebar.classList.remove("nav-open");
       toggle.setAttribute("aria-expanded", "false");
     }
 
     function openNav() {
-      nav.classList.add("open");
+      sidebar.classList.add("nav-open");
       toggle.setAttribute("aria-expanded", "true");
     }
 
     toggle.addEventListener("click", function () {
-      if (nav.classList.contains("open")) {
+      if (sidebar.classList.contains("nav-open")) {
         closeNav();
       } else {
         openNav();
       }
     });
 
-    nav.querySelectorAll(".nav-link").forEach(function (link) {
+    sidebar.querySelectorAll(".nav-link").forEach(function (link) {
       link.addEventListener("click", closeNav);
     });
 
@@ -82,7 +82,7 @@
       if (e.key === "Escape") closeNav();
     });
 
-    var mq = window.matchMedia("(min-width: 641px)");
+    var mq = window.matchMedia("(min-width: 861px)");
     mq.addEventListener("change", function (e) {
       if (e.matches) closeNav();
     });
