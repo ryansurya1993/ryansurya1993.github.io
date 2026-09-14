@@ -412,6 +412,25 @@ section .lead {
   margin-bottom: 0;
 }
 
+/* ---------- Inline text links ---------- */
+
+.timeline-entry-product a,
+.timeline-entry-bullets a,
+.skills-list dd a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 2px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.timeline-entry-product a:hover,
+.timeline-entry-bullets a:hover,
+.skills-list dd a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 /* ---------- Skills ---------- */
 
 .skills-list {
