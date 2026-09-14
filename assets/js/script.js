@@ -91,7 +91,7 @@
   /* ---------- Scroll-spy active nav link ---------- */
 
   function initScrollSpy() {
-    var sections = document.querySelectorAll("main > section[id]");
+    var sections = document.querySelectorAll(".content > section[id]");
     var navLinks = document.querySelectorAll(".nav-link");
     if (!sections.length || !navLinks.length) return;
 
@@ -129,15 +129,20 @@
     if (!btn) return;
 
     var email = btn.getAttribute("data-email");
-    var originalLabel = btn.textContent;
+    var originalHTML = btn.innerHTML;
+    var checkIcon = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
     var resetTimer = null;
 
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
       function showCopied() {
-        btn.textContent = "Copied";
+        btn.innerHTML = checkIcon;
+        btn.setAttribute("aria-label", "Email address copied");
         clearTimeout(resetTimer);
         resetTimer = setTimeout(function () {
-          btn.textContent = originalLabel;
+          btn.innerHTML = originalHTML;
+          btn.setAttribute("aria-label", "Copy email address");
         }, 1800);
       }
 
