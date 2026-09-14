@@ -7,8 +7,8 @@
   /* ---------- Theme toggle ---------- */
 
   function applyTheme(theme) {
-    if (theme === "light") {
-      root.setAttribute("data-theme", "light");
+    if (theme === "dark" || theme === "light") {
+      root.setAttribute("data-theme", theme);
     } else {
       root.removeAttribute("data-theme");
     }
@@ -19,14 +19,19 @@
     try {
       stored = localStorage.getItem(THEME_KEY);
     } catch (e) {
-      /* localStorage unavailable — fall back to system preference */
+      /* localStorage unavailable — leave theme to system preference */
     }
 
-    if (stored) {
+    if (stored === "light" || stored === "dark") {
       applyTheme(stored);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-      applyTheme("light");
     }
+  }
+
+  function isDarkActive() {
+    var attr = root.getAttribute("data-theme");
+    if (attr === "dark") return true;
+    if (attr === "light") return false;
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
   }
 
   function initThemeToggle() {
@@ -34,8 +39,7 @@
     if (!btn) return;
 
     btn.addEventListener("click", function () {
-      var isLight = root.getAttribute("data-theme") === "light";
-      var next = isLight ? "dark" : "light";
+      var next = isDarkActive() ? "light" : "dark";
       applyTheme(next);
       try {
         localStorage.setItem(THEME_KEY, next);
@@ -48,38 +52,29 @@
   /* ---------- Mobile nav ---------- */
 
   function initMobileNav() {
-    var sidebar = document.getElementById("sidebar");
+    var nav = document.getElementById("siteNav");
     var toggle = document.getElementById("navToggle");
-    var scrim = document.getElementById("navScrim");
-    if (!sidebar || !toggle) return;
+    if (!nav || !toggle) return;
 
     function closeNav() {
-      sidebar.classList.remove("nav-open");
+      nav.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
-      if (scrim) scrim.style.display = "none";
     }
 
     function openNav() {
-      sidebar.classList.add("nav-open");
+      nav.classList.add("open");
       toggle.setAttribute("aria-expanded", "true");
-      if (scrim) scrim.style.display = "block";
     }
 
     toggle.addEventListener("click", function () {
-      var isOpen = sidebar.classList.contains("nav-open");
-      if (isOpen) {
+      if (nav.classList.contains("open")) {
         closeNav();
       } else {
         openNav();
       }
     });
 
-    if (scrim) {
-      scrim.addEventListener("click", closeNav);
-    }
-
-    var navLinks = sidebar.querySelectorAll(".nav-link");
-    navLinks.forEach(function (link) {
+    nav.querySelectorAll(".nav-link").forEach(function (link) {
       link.addEventListener("click", closeNav);
     });
 
@@ -87,7 +82,7 @@
       if (e.key === "Escape") closeNav();
     });
 
-    var mq = window.matchMedia("(min-width: 861px)");
+    var mq = window.matchMedia("(min-width: 641px)");
     mq.addEventListener("change", function (e) {
       if (e.matches) closeNav();
     });
@@ -96,7 +91,7 @@
   /* ---------- Scroll-spy active nav link ---------- */
 
   function initScrollSpy() {
-    var sections = document.querySelectorAll(".section[id]");
+    var sections = document.querySelectorAll("main > section[id]");
     var navLinks = document.querySelectorAll(".nav-link");
     if (!sections.length || !navLinks.length) return;
 
@@ -108,8 +103,7 @@
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          var hash = "#" + entry.target.id;
-          var link = linkByHash[hash];
+          var link = linkByHash["#" + entry.target.id];
           if (!link) return;
 
           if (entry.isIntersecting) {
@@ -128,53 +122,22 @@
     });
   }
 
-  /* ---------- Reveal on scroll ---------- */
-
-  function initReveal() {
-    var sections = document.querySelectorAll(".section");
-    if (!sections.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      sections.forEach(function (s) {
-        s.classList.add("in-view");
-      });
-      return;
-    }
-
-    var observer = new IntersectionObserver(
-      function (entries, obs) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-
-    sections.forEach(function (section) {
-      observer.observe(section);
-    });
-  }
-
   /* ---------- Copy email ---------- */
 
   function initCopyEmail() {
     var btn = document.getElementById("copyEmailBtn");
-    var label = document.getElementById("copyEmailLabel");
-    if (!btn || !label) return;
+    if (!btn) return;
 
     var email = btn.getAttribute("data-email");
-    var originalLabel = label.textContent;
+    var originalLabel = btn.textContent;
     var resetTimer = null;
 
     btn.addEventListener("click", function () {
       function showCopied() {
-        label.textContent = "Copied!";
+        btn.textContent = "Copied";
         clearTimeout(resetTimer);
         resetTimer = setTimeout(function () {
-          label.textContent = originalLabel;
+          btn.textContent = originalLabel;
         }, 1800);
       }
 
@@ -203,7 +166,6 @@
     initThemeToggle();
     initMobileNav();
     initScrollSpy();
-    initReveal();
     initCopyEmail();
     initYear();
   });

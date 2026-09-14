@@ -16,128 +16,100 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/style.css">
-<noscript><style>.section{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 
 <a class="skip-link" href="#about">Skip to content</a>
 
-<div class="layout">
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="#top" class="wordmark">Ryan Surya</a>
 
-  <header class="sidebar" id="sidebar">
-    <div class="sidebar-top">
-      <div class="brand">
-        <a href="#about" class="brand-mark" aria-label="Ryan Surya home">RS</a>
-        <div class="brand-text">
-          <h1>Ryan Surya</h1>
-          <p class="role">Senior Backend Engineer</p>
-        </div>
-      </div>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </div>
-
-    <p class="tagline">
-      Building reliable backend systems for logistics &amp; financial platforms:
-      APIs, data consistency, and real-time infrastructure.
-    </p>
-
-    <nav id="primaryNav" class="primary-nav">
-      <ul>
-        <li><a href="#about" class="nav-link"><span class="nav-index">01</span> About</a></li>
-        <li><a href="#experience" class="nav-link"><span class="nav-index">02</span> Experience</a></li>
-        <li><a href="#skills" class="nav-link"><span class="nav-index">03</span> Skills</a></li>
-        <li><a href="#projects" class="nav-link"><span class="nav-index">04</span> Projects</a></li>
-        <li><a href="#contact" class="nav-link"><span class="nav-index">05</span> Contact</a></li>
-      </ul>
+    <nav class="site-nav" id="siteNav">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <div class="sidebar-bottom">
-      <ul class="social-links">
-        <li>
-          <a href="https://github.com/ryansurya1993" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.44-2.7 5.42-5.28 5.7.42.36.78 1.07.78 2.15 0 1.56-.02 2.81-.02 3.19 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/ryansurya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:ryansurya1993@gmail.com" aria-label="Send email">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
-          </a>
-        </li>
-      </ul>
-
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+    <div class="site-header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <div class="nav-scrim" id="navScrim"></div>
+<main id="top">
 
-  <main class="content">
+  <section class="masthead">
+    <p class="eyebrow">Senior Backend Engineer</p>
+    <h1>Ryan Surya</h1>
+    <p class="masthead-tagline">
+      Building reliable backend systems for logistics and financial platforms:
+      APIs, data consistency, and real-time infrastructure.
+    </p>
+    <ul class="masthead-links">
+      <li><a href="mailto:ryansurya1993@gmail.com">Email</a></li>
+      <li><a href="https://github.com/ryansurya1993" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/ryansurya" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+  </section>
 
-    <section id="about" class="section" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title"><span class="section-number">01.</span> About</h2>
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-label">About</h2>
 
-      <div class="about-grid">
-        <p class="lead">
-          I'm a backend engineer with over <strong>10 years</strong> of professional experience,
-          including <strong>7 years focused on Go</strong>, building and maintaining B2B platforms
-          in the logistics and financial sector.
-        </p>
-        <p>
-          I've designed and delivered production systems spanning real-time communication,
-          event-driven notifications, and blockchain-based document verification for enterprise
-          clients. My work has centered on API development, database design, and system
-          architecture, typically structured around clear API layers, shared helper packages,
-          and scheduled cron jobs rather than a distributed microservices setup. I've owned
-          technical decisions end-to-end and mentored other engineers along the way.
-        </p>
+    <p class="lead">
+      I'm a backend engineer with over <strong>10 years</strong> of professional experience,
+      including <strong>7 years focused on Go</strong>, building and maintaining B2B platforms
+      in the logistics and financial sector.
+    </p>
+    <p>
+      I've designed and delivered production systems spanning real-time communication,
+      event-driven notifications, and blockchain-based document verification for enterprise
+      clients. My work has centered on API development, database design, and system
+      architecture, typically structured around clear API layers, shared helper packages,
+      and scheduled cron jobs rather than a distributed microservices setup. I've owned
+      technical decisions end-to-end and mentored other engineers along the way.
+    </p>
 
-        <ul class="fact-list">
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-5.33-7-11a7 7 0 0 1 14 0c0 5.67-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span>Based in Jakarta, Indonesia</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.69 2 6 2s6-.9 6-2v-5"/></svg>
-            <span>B.Sc. Information &amp; Multimedia Technology (S.Kom), GPA 3.62, Universitas Ciputra, 2011 to 2015</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4a1 1 0 0 0-1 1c0 2.5 1.5 4.5 4 5M17 5h3a1 1 0 0 1 1 1c0 2.5-1.5 4.5-4 5"/></svg>
-            <span>1st Place, 90K Code Hackathon (General Category), Universitas Ciputra, Sep 2017</span>
-          </li>
-        </ul>
+    <dl class="facts">
+      <div class="facts-row">
+        <dt>Location</dt>
+        <dd>Jakarta, Indonesia</dd>
       </div>
-    </section>
+      <div class="facts-row">
+        <dt>Education</dt>
+        <dd>B.Sc. Information &amp; Multimedia Technology (S.Kom), GPA 3.62, Universitas Ciputra, 2011 to 2015</dd>
+      </div>
+      <div class="facts-row">
+        <dt>Award</dt>
+        <dd>1st Place, 90K Code Hackathon (General Category), Universitas Ciputra, Sep 2017</dd>
+      </div>
+    </dl>
+  </section>
 
-    <section id="experience" class="section" aria-labelledby="experience-title">
-      <h2 id="experience-title" class="section-title"><span class="section-number">02.</span> Work Experience</h2>
+  <section id="experience" aria-labelledby="experience-title">
+    <h2 id="experience-title" class="section-label">Experience</h2>
 
-      <ol class="timeline">
+    <ol class="timeline">
 
-        <li class="job">
-          <div class="job-header">
-            <div>
-              <h3 class="job-title">Senior Backend Engineer</h3>
-              <p class="job-company">PT. Eljireh Teknologi Indonesia <span class="job-product">(ifreight.id)</span></p>
-            </div>
-            <p class="job-dates">Sep 2021 to Mar 2026</p>
-          </div>
-          <ul class="job-bullets">
+      <li class="timeline-entry">
+        <article>
+          <header class="timeline-entry-head">
+            <h3>Senior Backend Engineer</h3>
+            <p class="timeline-entry-company">PT. Eljireh Teknologi Indonesia <span class="timeline-entry-product">(ifreight.id)</span></p>
+            <p class="timeline-entry-date"><time datetime="2021-09">Sep 2021</time> to <time datetime="2026-03">Mar 2026</time></p>
+          </header>
+          <ul class="timeline-entry-bullets">
             <li>Automated deployment workflows by architecting a GitHub Actions CI/CD pipeline, reducing deployment time from 15 minutes to near zero and eliminating manual intervention for 100% of development releases.</li>
             <li>Led PostgreSQL schema design and query optimization using targeted indexing and caching strategies, maintaining consistent query performance under concurrent load for 140 enterprise clients on a platform prioritizing data consistency over availability.</li>
             <li>Contributed to system architecture decisions, designing for strict data consistency over availability using ACID-compliant PostgreSQL transactions and idempotency mechanisms to ensure correctness across concurrent financial and logistics operations.</li>
@@ -148,17 +120,17 @@
             <li>Architected a fault-tolerant real-time chat system using WebSockets and Redis Pub/Sub, achieving 99% message delivery reliability for concurrent enterprise user sessions.</li>
             <li>Built an event-driven push notification system using Redis Pub/Sub, delivering sub-second booking status updates to clients and internal users with low-latency fanout across active sessions.</li>
           </ul>
-        </li>
+        </article>
+      </li>
 
-        <li class="job">
-          <div class="job-header">
-            <div>
-              <h3 class="job-title">Backend Engineer</h3>
-              <p class="job-company">PT. Eljireh Teknologi Indonesia <span class="job-product">(ifreight.id)</span></p>
-            </div>
-            <p class="job-dates">Sep 2019 to Sep 2021</p>
-          </div>
-          <ul class="job-bullets">
+      <li class="timeline-entry">
+        <article>
+          <header class="timeline-entry-head">
+            <h3>Backend Engineer</h3>
+            <p class="timeline-entry-company">PT. Eljireh Teknologi Indonesia <span class="timeline-entry-product">(ifreight.id)</span></p>
+            <p class="timeline-entry-date"><time datetime="2019-09">Sep 2019</time> to <time datetime="2021-09">Sep 2021</time></p>
+          </header>
+          <ul class="timeline-entry-bullets">
             <li>Built and maintained RESTful APIs in Go using Gorilla Mux and Echo, serving 140 enterprise clients with 99% uptime across logistics and financial workflows.</li>
             <li>Implemented secure session-based authentication using Redis for server-side session management, enabling immediate session revocation.</li>
             <li>Eliminated 100% of duplicate transaction errors by engineering idempotent payment APIs using Redis-based deduplication for 140+ enterprise clients.</li>
@@ -166,185 +138,131 @@
             <li>Wrote database migrations, seed scripts, and unit tests for core helper functions; integrated Sentry for error monitoring and managed environment configuration on the development server.</li>
             <li>Developed a high-availability document generation pipeline using goroutine-based concurrency, cron-based pre-generation, and AWS S3 storage, eliminating on-demand generation latency for invoices and shipping documents with ZIP-bundled export support.</li>
           </ul>
-        </li>
+        </article>
+      </li>
 
-        <li class="job">
-          <div class="job-header">
-            <div>
-              <h3 class="job-title">Software Developer</h3>
-              <p class="job-company">Stratum Project <span class="job-product">(stratum.id)</span></p>
-            </div>
-            <p class="job-dates">Apr 2017 to Sep 2019</p>
-          </div>
-          <ul class="job-bullets">
+      <li class="timeline-entry">
+        <article>
+          <header class="timeline-entry-head">
+            <h3>Software Developer</h3>
+            <p class="timeline-entry-company">Stratum Project <span class="timeline-entry-product">(stratum.id)</span></p>
+            <p class="timeline-entry-date"><time datetime="2017-04">Apr 2017</time> to <time datetime="2019-09">Sep 2019</time></p>
+          </header>
+          <ul class="timeline-entry-bullets">
             <li>Built a news portal for a leadership organisation and developed company profile and e-commerce websites for local businesses using CMS platforms.</li>
             <li>Developed a sales and stock management system for an SME, including CSV export integration for e-Faktur, the Indonesian government's online tax reporting system.</li>
             <li>Built two LINE bots using the LINE developer API: one for JNE shipment tracking and one for live exchange rate monitoring across BCA, Mandiri, and Bank Indonesia.</li>
           </ul>
-        </li>
+        </article>
+      </li>
 
-        <li class="job">
-          <div class="job-header">
-            <div>
-              <h3 class="job-title">Web Developer</h3>
-              <p class="job-company">PT. Myme Tala Internasional <span class="job-product">(mymetala.com)</span></p>
-            </div>
-            <p class="job-dates">Nov 2015 to Mar 2017</p>
-          </div>
-          <ul class="job-bullets">
+      <li class="timeline-entry">
+        <article>
+          <header class="timeline-entry-head">
+            <h3>Web Developer</h3>
+            <p class="timeline-entry-company">PT. Myme Tala Internasional <span class="timeline-entry-product">(mymetala.com)</span></p>
+            <p class="timeline-entry-date"><time datetime="2015-11">Nov 2015</time> to <time datetime="2017-03">Mar 2017</time></p>
+          </header>
+          <ul class="timeline-entry-bullets">
             <li>Built an architectural project marketplace (seekplan.com), an Android company profile app with a custom API backend, and a Laravel 5.2 API for Android push notifications.</li>
           </ul>
-        </li>
+        </article>
+      </li>
 
-        <li class="job">
-          <div class="job-header">
-            <div>
-              <h3 class="job-title">Web Developer Intern</h3>
-              <p class="job-company">PT. Myme Tala Internasional <span class="job-product">(mymetala.com)</span></p>
-            </div>
-            <p class="job-dates">Jun 2014 to Aug 2014</p>
-          </div>
-          <ul class="job-bullets">
+      <li class="timeline-entry">
+        <article>
+          <header class="timeline-entry-head">
+            <h3>Web Developer Intern</h3>
+            <p class="timeline-entry-company">PT. Myme Tala Internasional <span class="timeline-entry-product">(mymetala.com)</span></p>
+            <p class="timeline-entry-date"><time datetime="2014-06">Jun 2014</time> to <time datetime="2014-08">Aug 2014</time></p>
+          </header>
+          <ul class="timeline-entry-bullets">
             <li>Developed a WordPress WooCommerce plugin for JNE, TIKI, and Wahana with live shipment tracking and automated shipping cost calculation using web scraping.</li>
           </ul>
-        </li>
-
-      </ol>
-    </section>
-
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="section-title"><span class="section-number">03.</span> Skills</h2>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Languages</h3>
-          <ul class="tag-list">
-            <li>Go (Golang)</li>
-            <li>PHP</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Frameworks &amp; Libraries</h3>
-          <ul class="tag-list">
-            <li>Gorilla Mux</li>
-            <li>Echo</li>
-            <li>Laravel</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Databases</h3>
-          <ul class="tag-list">
-            <li>PostgreSQL</li>
-            <li>MySQL</li>
-            <li>Redis</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Infrastructure &amp; DevOps</h3>
-          <ul class="tag-list">
-            <li>Docker</li>
-            <li>GitHub Actions</li>
-            <li>Nginx</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Cloud &amp; Storage</h3>
-          <ul class="tag-list">
-            <li>AWS S3</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Real-time &amp; Messaging</h3>
-          <ul class="tag-list">
-            <li>WebSocket</li>
-            <li>Redis Pub/Sub</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title"><span class="section-number">04.</span> Portfolio Projects</h2>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-card-top">
-            <h3>Ledgerly</h3>
-            <span class="badge">In Development</span>
-          </div>
-          <p>
-            A Go-based double-entry ledger system, built as a microservices architecture
-            (three services) with PostgreSQL, Redis, and RabbitMQ, containerized with Docker.
-          </p>
-          <ul class="tag-list tag-list--tech">
-            <li>Go</li>
-            <li>Microservices</li>
-            <li>PostgreSQL</li>
-            <li>Redis</li>
-            <li>RabbitMQ</li>
-            <li>Docker</li>
-            <li>Claude Code</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/ryansurya1993/ledgerly" target="_blank" rel="noopener noreferrer" class="project-link">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.44-2.7 5.42-5.28 5.7.42.36.78 1.07.78 2.15 0 1.56-.02 2.81-.02 3.19 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-              GitHub
-            </a>
-            <a href="https://ledgerly.ryansurya.com" target="_blank" rel="noopener noreferrer" class="project-link">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-              Live Site (Coming Soon)
-            </a>
-          </div>
         </article>
+      </li>
 
-        <div class="project-card project-card--more" aria-hidden="true">
-          <p>More projects coming soon.</p>
-        </div>
+    </ol>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-title">
+    <h2 id="skills-title" class="section-label">Skills</h2>
+
+    <dl class="skills-list">
+      <div class="skills-row">
+        <dt>Languages</dt>
+        <dd>Go (Golang), PHP</dd>
       </div>
-    </section>
+      <div class="skills-row">
+        <dt>Frameworks &amp; Libraries</dt>
+        <dd>Gorilla Mux, Echo, Laravel</dd>
+      </div>
+      <div class="skills-row">
+        <dt>Databases</dt>
+        <dd>PostgreSQL, MySQL, Redis</dd>
+      </div>
+      <div class="skills-row">
+        <dt>Infrastructure &amp; DevOps</dt>
+        <dd>Docker, GitHub Actions, Nginx</dd>
+      </div>
+      <div class="skills-row">
+        <dt>Cloud &amp; Storage</dt>
+        <dd>AWS S3</dd>
+      </div>
+      <div class="skills-row">
+        <dt>Real-time &amp; Messaging</dt>
+        <dd>WebSocket, Redis Pub/Sub</dd>
+      </div>
+    </dl>
+  </section>
 
-    <section id="contact" class="section section--contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title"><span class="section-number">05.</span> Contact</h2>
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-label">Portfolio Projects</h2>
 
-      <p class="lead">
-        I'm always open to discussing backend engineering roles, interesting systems problems,
-        or opportunities to collaborate. The fastest way to reach me is by email.
+    <article class="project">
+      <div class="project-head">
+        <h3>Ledgerly</h3>
+        <p class="project-status">In Development</p>
+      </div>
+      <p>
+        A Go-based double-entry ledger system, built as a microservices architecture
+        (three services) with PostgreSQL, Redis, and RabbitMQ, containerized with Docker.
       </p>
+      <p class="project-tech">Go, Microservices, PostgreSQL, Redis, RabbitMQ, Docker, Claude Code</p>
+      <p class="project-links">
+        <a href="https://github.com/ryansurya1993/ledgerly" target="_blank" rel="noopener noreferrer">GitHub &#8599;</a>
+        <a href="https://ledgerly.ryansurya.com" target="_blank" rel="noopener noreferrer">Live Site (Coming Soon) &#8599;</a>
+      </p>
+    </article>
 
-      <div class="contact-actions">
-        <button class="btn btn-primary" id="copyEmailBtn" data-email="ryansurya1993@gmail.com">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
-          <span id="copyEmailLabel">ryansurya1993@gmail.com</span>
-        </button>
-        <a class="btn btn-secondary" href="tel:+6281232208540">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.2a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92Z"/></svg>
-          +62 812-3220-8540
-        </a>
-      </div>
+    <p class="project-more">More projects coming soon.</p>
+  </section>
 
-      <ul class="social-links social-links--inline">
-        <li>
-          <a href="https://github.com/ryansurya1993" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.44-2.7 5.42-5.28 5.7.42.36.78 1.07.78 2.15 0 1.56-.02 2.81-.02 3.19 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-            github.com/ryansurya1993
-          </a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/in/ryansurya" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-            linkedin.com/in/ryansurya
-          </a>
-        </li>
-      </ul>
-    </section>
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-label">Contact</h2>
 
-    <footer class="site-footer">
-      <p>Designed &amp; built by Ryan Surya · <span id="year"></span></p>
-      <a href="https://github.com/ryansurya1993/ryansurya1993.github.io" target="_blank" rel="noopener noreferrer">View source</a>
-    </footer>
+    <p class="lead">
+      I'm always open to discussing backend engineering roles, interesting systems problems,
+      or opportunities to collaborate. The fastest way to reach me is by email.
+    </p>
 
-  </main>
-</div>
+    <p class="contact-email">
+      <a href="mailto:ryansurya1993@gmail.com">ryansurya1993@gmail.com</a>
+      <button class="copy-btn" id="copyEmailBtn" data-email="ryansurya1993@gmail.com" aria-label="Copy email address">Copy</button>
+    </p>
+
+    <ul class="contact-list">
+      <li><a href="https://github.com/ryansurya1993" target="_blank" rel="noopener noreferrer">github.com/ryansurya1993</a></li>
+      <li><a href="https://linkedin.com/in/ryansurya" target="_blank" rel="noopener noreferrer">linkedin.com/in/ryansurya</a></li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <p>Designed and built by Ryan Surya &middot; <span id="year"></span></p>
+    <a href="https://github.com/ryansurya1993/ryansurya1993.github.io" target="_blank" rel="noopener noreferrer">View source</a>
+  </footer>
+
+</main>
 
 <script src="assets/js/script.js"></script>
 </body>
