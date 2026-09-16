@@ -91,8 +91,8 @@
   /* ---------- Scroll-spy active nav link ---------- */
 
   function initScrollSpy() {
-    var sections = document.querySelectorAll(".content > section[id]");
-    var navLinks = document.querySelectorAll(".nav-link");
+    var sections = Array.prototype.slice.call(document.querySelectorAll(".content > section[id]"));
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
     if (!sections.length || !navLinks.length) return;
 
     var linkByHash = {};
@@ -100,26 +100,116 @@
       linkByHash[link.getAttribute("href")] = link;
     });
 
+    var visible = {};
+    var suppressed = false;
+    var releaseTimer = null;
+
+    function setActive(id) {
+      var link = linkByHash["#" + id];
+      if (!link) return;
+
+      navLinks.forEach(function (l) {
+        l.classList.remove("active");
+      });
+      link.classList.add("active");
+    }
+
+    function findVisibleId() {
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (visible[sections[i].id]) {
+          return sections[i].id;
+        }
+      }
+      return null;
+    }
+
+    function isAtBottom() {
+      return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    }
+
+    function update() {
+      if (suppressed) return;
+
+      /* At the very bottom of the page nothing comes after the last
+         section, so it always wins — the zone check below can't be
+         trusted there when trailing sections are short enough that a
+         clamped scroll lands in the same spot no matter which of them
+         was targeted. */
+      if (isAtBottom()) {
+        setActive(sections[sections.length - 1].id);
+        return;
+      }
+
+      var currentId = findVisibleId();
+      if (currentId) {
+        setActive(currentId);
+      }
+    }
+
+    function tryRelease() {
+      if (!suppressed) return;
+      /* Stay suppressed while resting at the bottom — a clamped scroll
+         there is geometrically identical whether the user clicked the
+         last link or the one before it, so only a scroll that actually
+         moves away from the bottom proves it's safe to trust the zone
+         check again. */
+      if (isAtBottom()) return;
+      suppressed = false;
+      clearTimeout(releaseTimer);
+      update();
+    }
+
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          var link = linkByHash["#" + entry.target.id];
-          if (!link) return;
-
-          if (entry.isIntersecting) {
-            navLinks.forEach(function (l) {
-              l.classList.remove("active");
-            });
-            link.classList.add("active");
-          }
+          visible[entry.target.id] = entry.isIntersecting;
         });
+        update();
       },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "0px 0px -70% 0px", threshold: 0 }
     );
+
+    window.addEventListener("scroll", update, { passive: true });
+
+    /* A click's own smooth-scroll also fires wheel-less scroll events, so
+       only real input (wheel, touch, keys) counts as the user scrolling
+       on their own. */
+    ["wheel", "touchmove", "keydown"].forEach(function (evt) {
+      window.addEventListener(evt, tryRelease, { passive: true });
+    });
 
     sections.forEach(function (section) {
       observer.observe(section);
     });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        var id = link.getAttribute("href").slice(1);
+        setActive(id);
+        suppressed = true;
+        clearTimeout(releaseTimer);
+        releaseTimer = setTimeout(tryRelease, 1200);
+      });
+    });
+  }
+
+  /* ---------- Mobile CV bar (hides once Contact is reachable) ---------- */
+
+  function initMobileCvBar() {
+    var bar = document.getElementById("mobileCvBar");
+    var contact = document.getElementById("contact");
+    if (!bar || !contact) return;
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          bar.classList.toggle("is-hidden", entry.isIntersecting);
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0 }
+    );
+
+    observer.observe(contact);
   }
 
   /* ---------- Copy email ---------- */
@@ -171,6 +261,7 @@
     initThemeToggle();
     initMobileNav();
     initScrollSpy();
+    initMobileCvBar();
     initCopyEmail();
     initYear();
   });
